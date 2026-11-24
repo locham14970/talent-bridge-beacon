@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Homepage sections live in `src/components/home/*` and are composed in `src/routes/index.tsx`; keep sections as separate components so later pages can reuse them.
+- All colors come from tokens in `src/styles.css` (brand tokens like `navy`, `teal`, `sdg-*`) and button variants in `button.tsx`; never hardcode color classes in components.
