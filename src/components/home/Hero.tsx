@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { ArrowRight, BadgeCheck, Compass, Network } from "lucide-react";
 
 import heroImage from "@/assets/hero-bridge.jpg";
@@ -35,10 +36,10 @@ export function Hero() {
 
           <div className="animate-rise mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row [animation-delay:240ms]">
             <Button variant="teal" size="xl" asChild className="w-full sm:w-auto">
-              <a href="#get-started">
+              <Link to="/register">
                 Create Your Skills Passport
                 <ArrowRight />
-              </a>
+              </Link>
             </Button>
             <Button variant="onNavy" size="xl" asChild className="w-full sm:w-auto">
               <a href="#how-it-works">Explore How It Works</a>

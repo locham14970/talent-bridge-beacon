@@ -76,7 +76,7 @@ export function DashboardShell({ children }: { children: ReactNode }) {
       <Sidebar collapsible="offcanvas">
         <SidebarHeader className="px-4 py-5">
           <Link to={roleHome(role)} aria-label="Go to dashboard overview" className="rounded-lg">
-            <Logo tone="light" />
+            <Logo tone="dark" />
           </Link>
         </SidebarHeader>
         <SidebarContent className="px-2">

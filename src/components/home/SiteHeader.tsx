@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { useQueryClient } from "@tanstack/react-query";
+import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
-import { toast } from "sonner";
 
+import { useAuth } from "@/components/auth/AuthProvider";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
 import { cn } from "@/lib/utils";
 import { Logo } from "./Logo";
 
@@ -14,15 +17,11 @@ const NAV = [
   { label: "About", href: "#about" },
 ];
 
-export function signInComingSoon() {
-  toast("Sign in is coming soon", {
-    description: "Accounts will open in the next stage of TalentBridge AI.",
-  });
-}
-
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { session } = useAuth();
+  const queryClient = useQueryClient();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -30,6 +29,13 @@ export function SiteHeader() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const handleSignOut = async () => {
+    setOpen(false);
+    await queryClient.cancelQueries();
+    queryClient.clear();
+    await supabase.auth.signOut();
+  };
 
   const light = !scrolled && !open;
 
@@ -68,17 +74,35 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <Button
-            variant={light ? "onNavy" : "quiet"}
-            size="pill"
-            className={light ? "border-transparent bg-transparent" : ""}
-            onClick={signInComingSoon}
-          >
-            Sign In
-          </Button>
-          <Button variant="teal" size="pill" asChild>
-            <a href="#get-started">Get Started</a>
-          </Button>
+          {session ? (
+            <>
+              <Button
+                variant={light ? "onNavy" : "quiet"}
+                size="pill"
+                className={light ? "border-transparent bg-transparent" : ""}
+                onClick={handleSignOut}
+              >
+                Sign Out
+              </Button>
+              <Button variant="teal" size="pill" asChild>
+                <Link to="/dashboard">Dashboard</Link>
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button
+                variant={light ? "onNavy" : "quiet"}
+                size="pill"
+                className={light ? "border-transparent bg-transparent" : ""}
+                asChild
+              >
+                <Link to="/login">Sign In</Link>
+              </Button>
+              <Button variant="teal" size="pill" asChild>
+                <Link to="/register">Get Started</Link>
+              </Button>
+            </>
+          )}
         </div>
 
         <button
@@ -113,21 +137,31 @@ export function SiteHeader() {
               ))}
             </ul>
             <div className="mt-4 grid grid-cols-2 gap-3 border-t border-border pt-4">
-              <Button
-                variant="outline"
-                size="pill"
-                onClick={() => {
-                  setOpen(false);
-                  signInComingSoon();
-                }}
-              >
-                Sign In
-              </Button>
-              <Button variant="teal" size="pill" asChild>
-                <a href="#get-started" onClick={() => setOpen(false)}>
-                  Get Started
-                </a>
-              </Button>
+              {session ? (
+                <>
+                  <Button variant="outline" size="pill" onClick={handleSignOut}>
+                    Sign Out
+                  </Button>
+                  <Button variant="teal" size="pill" asChild>
+                    <Link to="/dashboard" onClick={() => setOpen(false)}>
+                      Dashboard
+                    </Link>
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button variant="outline" size="pill" asChild>
+                    <Link to="/login" onClick={() => setOpen(false)}>
+                      Sign In
+                    </Link>
+                  </Button>
+                  <Button variant="teal" size="pill" asChild>
+                    <Link to="/register" onClick={() => setOpen(false)}>
+                      Get Started
+                    </Link>
+                  </Button>
+                </>
+              )}
             </div>
           </nav>
         </div>

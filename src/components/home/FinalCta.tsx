@@ -1,5 +1,5 @@
+import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 
@@ -25,18 +25,11 @@ export function FinalCta() {
             Be among the first to build a Skills Passport and take the next step toward meaningful
             work.
           </p>
-          <Button
-            variant="teal"
-            size="xl"
-            className="mt-10"
-            onClick={() =>
-              toast("Thank you for your interest", {
-                description: "Registration opens in the next stage of TalentBridge AI.",
-              })
-            }
-          >
-            Join TalentBridge AI
-            <ArrowRight />
+          <Button variant="teal" size="xl" className="mt-10" asChild>
+            <Link to="/register">
+              Join TalentBridge AI
+              <ArrowRight />
+            </Link>
           </Button>
         </div>
       </div>
