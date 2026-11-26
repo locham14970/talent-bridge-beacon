@@ -1,15 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { PageHeader } from "@/components/dashboard/PageHeader";
-import { ProfileForm } from "@/components/dashboard/ProfileForm";
+import { ProfileManager } from "@/components/profile/ProfileManager";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/_authenticated/dashboard/profile")({
-  head: () => pageHead("My profile", "Edit your private TalentBridge AI profile.", { noindex: true }),
+  head: () => pageHead("My Profile", "Manage your TalentBridge AI profile, education, skills, experience and documents.", { noindex: true }),
   component: () => (
     <>
-      <PageHeader eyebrow="Account" title="Edit your profile" description="Keep your details up to date. Only you can see them." />
-      <ProfileForm />
+      <PageHeader
+        eyebrow="Profile Management"
+        title="My Profile"
+        description="Keep your personal details, education, skills, work experience, career interests, and documents up to date."
+      />
+      <ProfileManager />
     </>
   ),
 });

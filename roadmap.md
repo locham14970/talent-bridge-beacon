@@ -10,5 +10,13 @@
 - [x] Homepage Sign In / Get Started buttons wired to real pages
 - [x] Employer self-selection at sign-up (confirmed by user)
 
-## Next stage
-- [ ] Digital Skills Passport builder
+## Stage 3 — Profile Management & Complete Jobseeker Dashboard
+- [x] Database tables & RLS for Education, Professional Skills, Work Experience, Career Interests
+- [ ] Profile Management Module: Personal Info, Education, Skills, Work Experience, Career Interests, CV & Certificate uploads
+- [ ] Secure private storage for CVs and certificates
+- [ ] Digital Skills Passport: full view, preview mode, and secure opt-in sharing
+- [ ] Skills Assessment: interactive self-assessment saved to database and shown on Passport
+- [ ] Job Opportunities: browse, search by title/skills, filter, view descriptions, save jobs, apply
+- [ ] Application Tracking: Submitted, Under Review, Shortlisted, Interview, Accepted, Rejected
+- [ ] Dashboard Overview: welcome, completion, skills & qualifications, recommended opportunities, recent applications, notifications
+- [ ] End-to-end test of the complete jobseeker journey

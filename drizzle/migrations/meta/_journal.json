@@ -15,6 +15,13 @@
       "when": 1795606399254,
       "tag": "0001_add_profile_management_tables",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1795683401908,
+      "tag": "0002_add_jobseeker_dashboard_tables",
+      "breakpoints": true
     }
   ]
 }

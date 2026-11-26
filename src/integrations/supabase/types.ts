@@ -14,6 +14,117 @@ export type Database = {
   }
   public: {
     Tables: {
+      job_applications: {
+        Row: {
+          cover_note: string
+          created_at: string
+          cv_document_id: string | null
+          id: string
+          job_id: string
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          cover_note?: string
+          created_at?: string
+          cv_document_id?: string | null
+          id?: string
+          job_id: string
+          status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          cover_note?: string
+          created_at?: string
+          cv_document_id?: string | null
+          id?: string
+          job_id?: string
+          status?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "job_applications_cv_document_id_fkey"
+            columns: ["cv_document_id"]
+            isOneToOne: false
+            referencedRelation: "profile_documents"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "job_applications_job_id_fkey"
+            columns: ["job_id"]
+            isOneToOne: false
+            referencedRelation: "job_opportunities"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "job_applications_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      job_opportunities: {
+        Row: {
+          created_at: string
+          description: string
+          employer_id: string | null
+          employment_type: string
+          id: string
+          industry: string
+          is_active: boolean
+          is_sample: boolean
+          location: string
+          organization_name: string
+          required_skills: string[]
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description: string
+          employer_id?: string | null
+          employment_type: string
+          id?: string
+          industry: string
+          is_active?: boolean
+          is_sample?: boolean
+          location: string
+          organization_name: string
+          required_skills?: string[]
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          employer_id?: string | null
+          employment_type?: string
+          id?: string
+          industry?: string
+          is_active?: boolean
+          is_sample?: boolean
+          location?: string
+          organization_name?: string
+          required_skills?: string[]
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "job_opportunities_employer_id_fkey"
+            columns: ["employer_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       notifications: {
         Row: {
           body: string
@@ -43,6 +154,41 @@ export type Database = {
           user_id?: string
         }
         Relationships: []
+      }
+      passport_shares: {
+        Row: {
+          created_at: string
+          include_contact: boolean
+          is_active: boolean
+          share_token: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          include_contact?: boolean
+          is_active?: boolean
+          share_token?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          include_contact?: boolean
+          is_active?: boolean
+          share_token?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "passport_shares_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       profile_career_interests: {
         Row: {
@@ -74,6 +220,53 @@ export type Database = {
             foreignKeyName: "profile_career_interests_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profile_documents: {
+        Row: {
+          created_at: string
+          doc_type: string
+          file_name: string
+          file_path: string
+          file_size: number
+          id: string
+          issuer: string
+          mime_type: string
+          title: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          doc_type: string
+          file_name: string
+          file_path: string
+          file_size: number
+          id?: string
+          issuer?: string
+          mime_type: string
+          title: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          doc_type?: string
+          file_name?: string
+          file_path?: string
+          file_size?: number
+          id?: string
+          issuer?: string
+          mime_type?: string
+          title?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "profile_documents_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
@@ -253,6 +446,86 @@ export type Database = {
         }
         Relationships: []
       }
+      saved_jobs: {
+        Row: {
+          created_at: string
+          id: string
+          job_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          job_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          job_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "saved_jobs_job_id_fkey"
+            columns: ["job_id"]
+            isOneToOne: false
+            referencedRelation: "job_opportunities"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "saved_jobs_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      skills_assessments: {
+        Row: {
+          completed_at: string
+          digital_score: number
+          id: string
+          language_score: number
+          overall_score: number
+          readiness_score: number
+          summary: string
+          technical_score: number
+          user_id: string
+        }
+        Insert: {
+          completed_at?: string
+          digital_score: number
+          id?: string
+          language_score: number
+          overall_score: number
+          readiness_score: number
+          summary?: string
+          technical_score: number
+          user_id: string
+        }
+        Update: {
+          completed_at?: string
+          digital_score?: number
+          id?: string
+          language_score?: number
+          overall_score?: number
+          readiness_score?: number
+          summary?: string
+          technical_score?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "skills_assessments_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       user_roles: {
         Row: {
           created_at: string
@@ -286,6 +559,7 @@ export type Database = {
           total: number
         }[]
       }
+      get_shared_passport: { Args: { _token: string }; Returns: Json }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]

@@ -17,6 +17,7 @@ import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedEmployerRouteImport } from './routes/_authenticated/employer'
+import { Route as PassportTokenRouteImport } from './routes/passport.$token'
 import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin.index'
 import { Route as AuthenticatedAdminNotificationsRouteImport } from './routes/_authenticated/admin.notifications'
 import { Route as AuthenticatedAdminProfileRouteImport } from './routes/_authenticated/admin.profile'
@@ -69,6 +70,11 @@ const AuthenticatedEmployerRoute = AuthenticatedEmployerRouteImport.update({
   id: '/employer',
   path: '/employer',
   getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const PassportTokenRoute = PassportTokenRouteImport.update({
+  id: '/passport/$token',
+  path: '/passport/$token',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedAdminIndexRoute = AuthenticatedAdminIndexRouteImport.update({
   id: '/',
@@ -156,6 +162,7 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AuthenticatedAdminRouteWithChildren
   '/dashboard': typeof AuthenticatedDashboardRouteWithChildren
   '/employer': typeof AuthenticatedEmployerRouteWithChildren
+  '/passport/$token': typeof PassportTokenRoute
   '/admin/notifications': typeof AuthenticatedAdminNotificationsRoute
   '/admin/profile': typeof AuthenticatedAdminProfileRoute
   '/dashboard/assessment': typeof AuthenticatedDashboardAssessmentRoute
@@ -175,6 +182,7 @@ export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/register': typeof RegisterRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/passport/$token': typeof PassportTokenRoute
   '/admin/notifications': typeof AuthenticatedAdminNotificationsRoute
   '/admin/profile': typeof AuthenticatedAdminProfileRoute
   '/dashboard/assessment': typeof AuthenticatedDashboardAssessmentRoute
@@ -199,6 +207,7 @@ export interface FileRoutesById {
   '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRouteWithChildren
   '/_authenticated/employer': typeof AuthenticatedEmployerRouteWithChildren
+  '/passport/$token': typeof PassportTokenRoute
   '/_authenticated/admin/notifications': typeof AuthenticatedAdminNotificationsRoute
   '/_authenticated/admin/profile': typeof AuthenticatedAdminProfileRoute
   '/_authenticated/dashboard/assessment': typeof AuthenticatedDashboardAssessmentRoute
@@ -223,6 +232,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/dashboard'
     | '/employer'
+    | '/passport/$token'
     | '/admin/notifications'
     | '/admin/profile'
     | '/dashboard/assessment'
@@ -242,6 +252,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/register'
     | '/reset-password'
+    | '/passport/$token'
     | '/admin/notifications'
     | '/admin/profile'
     | '/dashboard/assessment'
@@ -265,6 +276,7 @@ export interface FileRouteTypes {
     | '/_authenticated/admin'
     | '/_authenticated/dashboard'
     | '/_authenticated/employer'
+    | '/passport/$token'
     | '/_authenticated/admin/notifications'
     | '/_authenticated/admin/profile'
     | '/_authenticated/dashboard/assessment'
@@ -286,6 +298,7 @@ export interface RootRouteChildren {
   LoginRoute: typeof LoginRoute
   RegisterRoute: typeof RegisterRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
+  PassportTokenRoute: typeof PassportTokenRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -345,6 +358,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/employer'
       preLoaderRoute: typeof AuthenticatedEmployerRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/passport/$token': {
+      id: '/passport/$token'
+      path: '/passport/$token'
+      fullPath: '/passport/$token'
+      preLoaderRoute: typeof PassportTokenRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_authenticated/admin/': {
       id: '/_authenticated/admin/'
@@ -523,6 +543,7 @@ const rootRouteChildren: RootRouteChildren = {
   LoginRoute: LoginRoute,
   RegisterRoute: RegisterRoute,
   ResetPasswordRoute: ResetPasswordRoute,
+  PassportTokenRoute: PassportTokenRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
