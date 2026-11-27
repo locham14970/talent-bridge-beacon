@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-/** TalentBridge AI mark: a verified arc of connected nodes spanning two shores. */
+/** TalentBridge mark: a verified arc of connected nodes spanning two shores. */
 export function Logo({ className, tone = "dark" }: { className?: string; tone?: "dark" | "light" }) {
   return (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
@@ -32,7 +32,7 @@ export function Logo({ className, tone = "dark" }: { className?: string; tone?: 
           tone === "dark" ? "text-navy" : "text-navy-foreground",
         )}
       >
-        TalentBridge<span className="text-teal"> AI</span>
+        TalentBridge
       </span>
     </span>
   );

@@ -95,7 +95,7 @@ export function readinessSteps(profilePercent: number): ReadinessStep[] {
     {
       key: "account",
       title: "Create your account",
-      description: "Your TalentBridge AI account is set up.",
+      description: "Your TalentBridge account is set up.",
       status: "done",
     },
     {

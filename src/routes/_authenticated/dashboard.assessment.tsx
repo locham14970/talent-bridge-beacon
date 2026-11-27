@@ -14,7 +14,7 @@ import { pageHead } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/_authenticated/dashboard/assessment")({
-  head: () => pageHead("Skills Assessment", "Complete your TalentBridge AI Skills Assessment.", { noindex: true }),
+  head: () => pageHead("Skills Assessment", "Complete your TalentBridge Skills Assessment.", { noindex: true }),
   component: AssessmentPage,
 });
 

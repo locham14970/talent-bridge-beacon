@@ -7,7 +7,7 @@ import { ROLE_LABELS, type AppRole } from "@/lib/account";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/_authenticated/admin/")({
-  head: () => pageHead("Admin dashboard", "TalentBridge AI administration.", { noindex: true }),
+  head: () => pageHead("Admin dashboard", "TalentBridge administration.", { noindex: true }),
   component: AdminOverview,
 });
 

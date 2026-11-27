@@ -9,7 +9,7 @@ import { SiteFooter } from "@/components/home/SiteFooter";
 import { SiteHeader } from "@/components/home/SiteHeader";
 import { Solution } from "@/components/home/Solution";
 
-const TITLE = "TalentBridge AI — From Displaced Talent to Verified Opportunity";
+const TITLE = "TalentBridge — From Displaced Talent to Verified Opportunity";
 const DESCRIPTION =
   "Skills verification, employment readiness and intelligent opportunity matching that help skilled refugees reach meaningful careers.";
 

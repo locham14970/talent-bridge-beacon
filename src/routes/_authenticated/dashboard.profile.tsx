@@ -5,7 +5,7 @@ import { ProfileManager } from "@/components/profile/ProfileManager";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/_authenticated/dashboard/profile")({
-  head: () => pageHead("My Profile", "Manage your TalentBridge AI profile, education, skills, experience and documents.", { noindex: true }),
+  head: () => pageHead("My Profile", "Manage your TalentBridge profile, education, skills, experience and documents.", { noindex: true }),
   component: () => (
     <>
       <PageHeader

@@ -1,5 +1,5 @@
 export function pageHead(title: string, description: string, opts: { noindex?: boolean } = {}) {
-  const fullTitle = `${title} | TalentBridge AI`;
+  const fullTitle = `${title} | TalentBridge`;
   return {
     meta: [
       { title: fullTitle },

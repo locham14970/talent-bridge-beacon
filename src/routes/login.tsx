@@ -19,7 +19,7 @@ export const Route = createFileRoute("/login")({
     return redirect ? { redirect } : {};
   },
   head: () =>
-    pageHead("Sign in", "Sign in to your TalentBridge AI account to continue building your career profile."),
+    pageHead("Sign in", "Sign in to your TalentBridge account to continue building your career profile."),
   component: LoginPage,
 });
 
@@ -148,7 +148,7 @@ function LoginPage() {
   }
 
   return (
-    <AuthLayout title="Welcome back" subtitle="Sign in to continue to your TalentBridge AI dashboard.">
+    <AuthLayout title="Welcome back" subtitle="Sign in to continue to your TalentBridge dashboard.">
       <form onSubmit={onLogin} noValidate className="space-y-5">
         <div>
           <Label htmlFor="email">Email</Label>
@@ -207,7 +207,7 @@ function LoginPage() {
         </Button>
       </form>
       <p className="mt-8 text-center text-sm text-muted-foreground">
-        New to TalentBridge AI?{" "}
+        New to TalentBridge?{" "}
         <Link to="/register" className="font-semibold text-teal hover:underline">
           Create an account
         </Link>

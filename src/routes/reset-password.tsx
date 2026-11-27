@@ -13,7 +13,7 @@ import { passwordSchema } from "@/lib/auth-schemas";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/reset-password")({
-  head: () => pageHead("Choose a new password", "Set a new password for your TalentBridge AI account.", { noindex: true }),
+  head: () => pageHead("Choose a new password", "Set a new password for your TalentBridge account.", { noindex: true }),
   component: ResetPasswordPage,
 });
 

@@ -27,7 +27,7 @@ export function FinalCta() {
           </p>
           <Button variant="teal" size="xl" className="mt-10" asChild>
             <Link to="/register">
-              Join TalentBridge AI
+              Join TalentBridge
               <ArrowRight />
             </Link>
           </Button>

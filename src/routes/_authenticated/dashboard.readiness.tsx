@@ -3,8 +3,9 @@ import { Check } from "lucide-react";
 
 import { PageHeader } from "@/components/dashboard/PageHeader";
 import { StatusBadge } from "@/components/dashboard/StatusBadge";
-import { useAccount } from "@/hooks/use-account";
-import { profileCompletion, readinessSteps } from "@/lib/account";
+import { useAccount, useProfileDetails } from "@/hooks/use-account";
+import { readinessSteps } from "@/lib/account";
+import { detailedProfileCompletion } from "@/lib/profile-data";
 import { pageHead } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
@@ -16,8 +17,9 @@ export const Route = createFileRoute("/_authenticated/dashboard/readiness")({
 const LABEL = { done: "Done", current: "Next step", upcoming: "Coming up" } as const;
 
 function Readiness() {
-  const { profile, role } = useAccount();
-  const steps = readinessSteps(profileCompletion(profile, role).percent);
+  const { profile } = useAccount();
+  const details = useProfileDetails();
+  const steps = readinessSteps(detailedProfileCompletion(profile, details).percent);
   return (
     <>
       <PageHeader eyebrow="Readiness Navigator" title="Employment Readiness Navigator" description="Your step-by-step path toward meaningful work." />

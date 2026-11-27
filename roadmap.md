@@ -12,11 +12,15 @@
 
 ## Stage 3 — Profile Management & Complete Jobseeker Dashboard
 - [x] Database tables & RLS for Education, Professional Skills, Work Experience, Career Interests
-- [ ] Profile Management Module: Personal Info, Education, Skills, Work Experience, Career Interests, CV & Certificate uploads
-- [ ] Secure private storage for CVs and certificates
-- [ ] Digital Skills Passport: full view, preview mode, and secure opt-in sharing
-- [ ] Skills Assessment: interactive self-assessment saved to database and shown on Passport
-- [ ] Job Opportunities: browse, search by title/skills, filter, view descriptions, save jobs, apply
-- [ ] Application Tracking: Submitted, Under Review, Shortlisted, Interview, Accepted, Rejected
-- [ ] Dashboard Overview: welcome, completion, skills & qualifications, recommended opportunities, recent applications, notifications
+- [x] Profile Management Module: Personal Info, Education, Skills, Work Experience, Career Interests, CV & Certificate uploads
+- [x] Secure private storage for CVs and certificates
+- [x] Digital Skills Passport: full view, preview mode, and secure opt-in sharing
+- [x] Skills Assessment: interactive self-assessment saved to database and shown on Passport
+- [x] Job Opportunities: browse, search by title/skills, filter, view descriptions, save jobs, apply
+- [x] Application Tracking: Submitted, Under Review, Shortlisted, Interview, Accepted, Rejected
+- [x] Dashboard Overview: welcome, completion, skills & qualifications, recommended opportunities, recent applications, notifications
+- [x] Rename branding from "TalentBridge AI" to "TalentBridge" across logo, header, footer, pages, and browser tab titles
 - [ ] End-to-end test of the complete jobseeker journey
+
+## Next stage (from uploaded Employer Dashboard brief)
+- [ ] Employer Dashboard: Company Profile, Job Management, Candidate Management, Application Status updates

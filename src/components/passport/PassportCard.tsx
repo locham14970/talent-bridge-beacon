@@ -45,7 +45,7 @@ export function PassportCard({ data }: { data: PassportData }) {
         <div className="pointer-events-none absolute inset-0 bg-grid-navy" aria-hidden="true" />
         <div className="relative flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <p className="eyebrow text-teal-bright">TalentBridge AI · Digital Skills Passport</p>
+            <p className="eyebrow text-teal-bright">TalentBridge · Digital Skills Passport</p>
             <h2 className="mt-2 text-2xl font-bold sm:text-3xl">{data.full_name || "Unnamed professional"}</h2>
             {data.professional_title && <p className="mt-1 text-base text-navy-muted">{data.professional_title}</p>}
           </div>

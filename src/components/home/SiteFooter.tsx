@@ -4,7 +4,7 @@ import { Logo } from "./Logo";
 
 function comingSoon(label: string) {
   toast(`${label} is coming soon`, {
-    description: "This page will be published in the next stage of TalentBridge AI.",
+    description: "This page will be published in the next stage of TalentBridge.",
   });
 }
 
@@ -53,7 +53,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-navy-foreground/10">
         <p className="mx-auto max-w-7xl px-5 py-6 text-xs text-navy-muted sm:px-8">
-          © {new Date().getFullYear()} TalentBridge AI. All rights reserved.
+          © {new Date().getFullYear()} TalentBridge. All rights reserved.
         </p>
       </div>
     </footer>

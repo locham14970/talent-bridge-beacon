@@ -19,7 +19,7 @@ export const Route = createFileRoute("/register")({
   head: () =>
     pageHead(
       "Create your account",
-      "Join TalentBridge AI to document your skills and qualifications and prepare for meaningful work.",
+      "Join TalentBridge to document your skills and qualifications and prepare for meaningful work.",
     ),
   component: RegisterPage,
 });
@@ -98,7 +98,7 @@ function RegisterPage() {
     }
     try {
       const role = await fetchPrimaryRole(data.user.id);
-      toast.success("Welcome to TalentBridge AI");
+      toast.success("Welcome to TalentBridge");
       await navigate({ to: roleHome(role), replace: true });
     } catch {
       setSubmitting(false);
@@ -150,7 +150,7 @@ function RegisterPage() {
             })}
           </div>
           <p className="mt-2 text-xs text-muted-foreground">
-            Administrator accounts are assigned by the TalentBridge AI team.
+            Administrator accounts are assigned by the TalentBridge team.
           </p>
         </fieldset>
 

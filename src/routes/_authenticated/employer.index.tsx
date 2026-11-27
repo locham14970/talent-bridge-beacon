@@ -8,7 +8,7 @@ import { profileCompletion } from "@/lib/account";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/_authenticated/employer/")({
-  head: () => pageHead("Employer dashboard", "Your TalentBridge AI employer dashboard.", { noindex: true }),
+  head: () => pageHead("Employer dashboard", "Your TalentBridge employer dashboard.", { noindex: true }),
   component: EmployerOverview,
 });
 

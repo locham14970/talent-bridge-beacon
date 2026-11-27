@@ -9,7 +9,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/passport/$token")({
-  head: () => pageHead("Shared Digital Skills Passport", "Read-only Digital Skills Passport shared via TalentBridge AI.", { noindex: true }),
+  head: () => pageHead("Shared Digital Skills Passport", "Read-only Digital Skills Passport shared via TalentBridge.", { noindex: true }),
   component: SharedPassportPage,
 });
 
@@ -40,9 +40,9 @@ function SharedPassportPage() {
     <div className="min-h-screen bg-surface">
       <header className="border-b bg-card">
         <div className="container flex h-16 items-center justify-between">
-          <Link to="/" aria-label="TalentBridge AI home"><Logo /></Link>
+          <Link to="/" aria-label="TalentBridge home"><Logo /></Link>
           <Button variant="outline" size="pill" asChild>
-            <Link to="/"><ArrowLeft /> TalentBridge AI</Link>
+            <Link to="/"><ArrowLeft /> TalentBridge</Link>
           </Button>
         </div>
       </header>
@@ -59,7 +59,7 @@ function SharedPassportPage() {
               This link is either invalid or its owner has turned off sharing.
             </p>
             <Button variant="teal" size="pill" className="mt-6" asChild>
-              <Link to="/">Return to TalentBridge AI</Link>
+              <Link to="/">Return to TalentBridge</Link>
             </Button>
           </div>
         ) : (

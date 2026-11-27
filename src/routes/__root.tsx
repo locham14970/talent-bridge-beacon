@@ -82,14 +82,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "TalentBridge AI" },
+      { title: "TalentBridge" },
       {
         name: "description",
         content: "From displaced talent to verified opportunity.",
       },
-      { name: "author", content: "TalentBridge AI" },
+      { name: "author", content: "TalentBridge" },
       { name: "theme-color", content: "#01234b" },
-      { property: "og:site_name", content: "TalentBridge AI" },
+      { property: "og:site_name", content: "TalentBridge" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

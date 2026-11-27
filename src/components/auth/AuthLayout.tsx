@@ -27,7 +27,7 @@ export function AuthLayout({
           className="pointer-events-none absolute -bottom-40 -left-24 size-[28rem] rounded-full border border-teal/20"
           aria-hidden="true"
         />
-        <Link to="/" aria-label="TalentBridge AI home" className="relative w-fit rounded-lg">
+        <Link to="/" aria-label="TalentBridge home" className="relative w-fit rounded-lg">
           <Logo tone="light" />
         </Link>
         <div className="relative mt-auto max-w-md">
@@ -50,7 +50,7 @@ export function AuthLayout({
 
       <main className="flex flex-col px-5 py-8 sm:px-10">
         <div className="flex items-center justify-between">
-          <Link to="/" aria-label="TalentBridge AI home" className="rounded-lg lg:hidden">
+          <Link to="/" aria-label="TalentBridge home" className="rounded-lg lg:hidden">
             <Logo />
           </Link>
           <Link

@@ -44,7 +44,7 @@ export function Solution() {
               align="left"
               eyebrow="Our solution"
               title="One bridge, three connected capabilities."
-              intro="TalentBridge AI turns hidden experience into verified, visible talent — and guides each person from proof of skills to a real opportunity."
+              intro="TalentBridge turns hidden experience into verified, visible talent — and guides each person from proof of skills to a real opportunity."
             />
 
             <ul className="mt-10 space-y-4">

@@ -41,7 +41,7 @@ export function Impact() {
           id="impact-title"
           eyebrow="Mission & impact"
           title="Built to advance the UN Sustainable Development Goals."
-          intro="TalentBridge AI exists so that displacement does not erase expertise. Our approach is designed to contribute to five of the United Nations Sustainable Development Goals."
+          intro="TalentBridge exists so that displacement does not erase expertise. Our approach is designed to contribute to five of the United Nations Sustainable Development Goals."
         />
 
         <ul className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
